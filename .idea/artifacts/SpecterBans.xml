@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SpecterBans">
+    <output-path>$PROJECT_DIR$/../../SP Server/plugins</output-path>
+    <root id="archive" name="SpecterBans.jar">
+      <element id="module-output" name="SpecterBans" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,73 @@
+#  _____ _____  ______ _____ _______ ______ _____  ____          _   _  _____
+# / ____|  __ \|  ____/ ____|__   __|  ____|  __ \|  _ \   /\   | \ | |/ ____|
+#| (___ | |__) | |__ | |       | |  | |__  | |__) | |_) | /  \  |  \| | (___
+# \___ \|  ___/|  __|| |       | |  |  __| |  _  /|  _ < / /\ \ | . ` |\___ \
+# ____) | |    | |___| |____   | |  | |____| | \ \| |_) / ____ \| |\  |____) |
+#|_____/|_|    |______\_____|  |_|  |______|_|  \_\____/_/    \_\_| \_|_____/
+#
+# Desenvolvedor: Lucas L.
+# Discord: lukedluz#8795
+# Versão: 1.0
+# Site: https://specterplugins.com
+#
+# Permissões:
+# - specterbans.usar
+# - specterbans.punir
+# - specterbans.despunir
+#
+# Placeholders:
+# @user - Usuário que será punido.
+# @staff - Nick do staffer que aplicou a punição.
+# @motivo - Motivo da punição aplicada.
+# @tempo - Tempo da punição aplicada.
+# @prova - Prova usada para aplicar a punição.
+# @prefixo - Prefixo configurável abaixo.
+#
+# Dependências:
+# *LegendChat (Em breve opção para nChat e outros plugins de chat)
+#
+# Atualizações:
+# - Poder mudar o item, e slot de cada punição;
+# - Compatibilidade com outros plugins de chat;
+# - Permissões 100% configuráveis;
+
+Mensagens:
+  Prefixo: '&b[SpecterPlugins]'
+  ComandoErrado: '@prefixo &fUse &c/punir <usuario>&f.'
+  JogadorInvalido: '@prefixo &c@user não é um jogador.'
+  SemProva: '@prefixo &fInsira sua prova:'
+  SemPermissao: '@prefixo &cSem permissão.'
+
+Menu: #Pode usar a placeholder @user para o nome do player que irá punir, exemplos abaixo:
+  Tamanho: 3 #Quantidade de linhas do GUI de punições.
+  Nome: '&bPlayer sendo Punido: &c@user&f.'
+  Confirmar: '&cClique aqui para punir: &4@user&f.'
+  Fechar: '&cClique para fechar o menu.'
+  Slot: 27 #Slot do item para fechar o menu.
+
+Punicoes: #Crie quantos motivos quiser.
+  Flood:
+    Permissao: flood #O prefixo de todas as punições é 'specterbans', ou seja, caso esteja Permissao: flood - no seu plugin de Permissões deverá colocar 'specterbans.flood'.
+    Prova: false
+    Comandos: #Use quantos comandos quiser.
+      '1': tempmute @user 5m Flood (1/3)
+      '2': tempmute @user 1h Flood (2/3)
+      '3': tempban @user 24h Flood (3/3)
+  Hack:
+    Permissao: specterbans.hack
+    Prova: true
+    Comandos:
+      '1': ban @user Uso de Hack (@prova)
+
+Dados:
+  Tipo: FlatFile #MySQL | SQLite | FlatFile
+  # Caso use MySQL complete os dados abaixo:
+  Host: localhost:3306
+  Database: 'specterplugins'
+  Usuario: 'lukedluz'
+  Senha: 'specterplugins123'
+  # Caso use SQLite escolha o nome do arquivo .db abaixo:
+  Arquivo: database.db
+  # Caso use FlatFile não mexa daqui para baixo:
+  FlatFile:
+

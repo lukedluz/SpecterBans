@@ -1,0 +1,8 @@
+name: SpecterBans
+main: me.lukedluz.SpecterBans.Main
+version: 1.0
+author: lukedluz
+website: https://specterplugins.com
+commands:
+  punir:
+    aliases: [punição]
